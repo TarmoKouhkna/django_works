@@ -130,7 +130,7 @@ input[type="text"] {
 
 /* Styles for the "Clear All URLs and Aliases" button */
 .btn.btn-clear {
-    background-color: ##F0DDD7 !important; /* Red color for the danger action */
+    background-color: ##F0DDD7 !important;
     border-color: ##F0DDD7 !important;
     color: #1B365D !important;
     font-weight: bold;
