@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'shortener_app/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'shortener_app/styles.css' %}">
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <div class="navbar-brand">
+            <img src="{% static 'shortener_app/elements.png' %}" width="40" height="40" alt="Logo">
+            <span class="navbar-text">URL Shortener</span>
+        </div>
+    </nav>
+
+    <div class="container shorten-form">
+        <div class="card">
+            <div class="card-header">
+                Create a Shortened URL
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input type="text" id="urlInput" name="url" placeholder="Enter the URL here">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Shorten URL</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="card shortened-list">
+            <div class="card-header">
+                List of Shortened URLs
+            </div>
+            <div class="card-body">
+                <ul>
+                    {% for aliased_url in urls %}
+                    <li>
+                        Original URL: <a href="{{ aliased_url.url }}">{{ aliased_url.url }}</a><br>
+                        Shortened URL: <a href="{{ aliased_url.full_url }}">{{ aliased_url.full_url }}</a><br>
+                        Alias: {{ aliased_url.alias }}
+                    </li>
+                    {% empty %}
+                    <li>No shortened URLs yet.</li>
+                    {% endfor %}
+                </ul>
+                <form method="post" action="{% url 'clear_aliases' %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-clear">
+                        Clear All URLs and Aliases
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'shortener_app/jquery.min.js' %}"></script>
+    <script src="{% static 'shortener_app/popper.min.js' %}"></script>
+    <script src="{% static 'shortener_app/bootstrap.min.js' %}"></script>
+</body>
+</html>

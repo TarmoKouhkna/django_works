@@ -1,0 +1,147 @@
+/* Set the background color of the entire page to light grey */
+body {
+    background-color: #dadcdf; /* Light grey background */
+    color: #333; /* Optional: Set a dark color for the text for contrast */
+}
+
+/* Custom CSS for styling the navbar */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.navbar-brand img {
+    margin-right: 40px; /* Spacing between logo and text */
+}
+
+.navbar-brand .navbar-text {
+    font-weight: bold;
+    font-size: 100%;
+    font-family: "Arial Black";
+}
+
+/* Center the form and give it a better layout */
+.shorten-form {
+    margin-top: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Allows stacking the form and list box */
+    height: auto;
+    padding-bottom: 50px; /* Add some space at the bottom */
+}
+
+.shorten-form .card {
+    background-color: white; /* Set the background to white */
+    max-width: 500px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+    margin-bottom: 30px; /* Add space between the two cards */
+}
+
+.shorten-form .card-header {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: Helvetica;
+    text-shadow: #bbbbbb 0px 2px 3px;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.shorten-form .form-group {
+    padding: 0 20px;
+}
+
+input[type="text"] {
+    width: calc(100% - 40px); /* Full width minus padding */
+    margin: 0 20px 10px 20px; /* Add margin for better spacing */
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.shorten-form .btn-primary {
+    background-color: #4B0082;
+    border-color: #4B0082;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: Arial;
+    color: antiquewhite;
+    width: calc(100% - 40px);
+    height: 50px;
+    margin: 0 20px 20px 20px;
+}
+
+.shorten-form .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+/* Styling for the list of shortened URLs */
+.shortened-list .card {
+    background-color: white; /* Set the background to white */
+    max-width: 500px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+    margin-bottom: 30px; /* Add space between the two cards */
+}
+
+.shortened-list .card-header {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: Helvetica;
+    text-shadow: #cfcece 0px 2px 3px;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.shortened-list .card-body {
+    padding: 20px;
+}
+
+.shortened-list ul {
+    list-style-type: none; /* Remove bullets */
+    padding-left: 0; /* Remove default padding */
+}
+
+.shortened-list ul li {
+    margin-bottom: 10px; /* Space between list items */
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 16px;
+}
+
+.shortened-list ul li a {
+    text-decoration: none;
+    color: #4B0082;
+}
+
+.shortened-list ul li a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+/* Styles for the "Clear All URLs and Aliases" button */
+.btn.btn-clear {
+    background-color: ##F0DDD7 !important; /* Red color for the danger action */
+    border-color: ##F0DDD7 !important;
+    color: #1B365D !important;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 5px;
+    width: calc(100% - 40px); /* Same width as the other button */
+    height: 50px;
+    margin: 0 20px 20px 20px;
+}
+
+.btn.btn-clear:hover {
+    background-color: #C82333 !important; /* Darker red on hover */
+    border-color: #BD2130 !important;
+}
